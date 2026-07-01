@@ -117,7 +117,18 @@
     opacity:0;
     animation:fadeUp 1.1s ease 0.55s forwards, floaty 6s ease-in-out 1.8s infinite;
   }
-  .hero-product img{width:100%; filter:drop-shadow(0 40px 60px rgba(0,0,0,0.6));}
+  .hero-product{position:relative;}
+  .hero-product::before{
+    content:"";
+    position:absolute;
+    top:50%; left:50%;
+    transform:translate(-50%,-50%);
+    width:140%; height:70%;
+    background:radial-gradient(ellipse, rgba(43,196,184,0.16), transparent 65%);
+    z-index:-1;
+    filter:blur(10px);
+  }
+  .hero-product img{width:100%; filter:drop-shadow(0 30px 40px rgba(0,0,0,0.55));}
 
   @keyframes fadeUp{
     from{opacity:0; transform:translateY(22px);}
@@ -386,7 +397,7 @@
 <body>
 
 <header>
-  <div class="logo"><img src="logo.png" alt="NOXALIVING"></div>
+  <div class="logo"><img src="logo-white.png" alt="NOXALIVING"></div>
   <nav class="mono">Smart living, better life.</nav>
 </header>
 
@@ -395,7 +406,7 @@
   <span class="hero-eyebrow mono">Acceso anticipado — P25</span>
   <h1>El jabón nunca<br>vuelve a tocar<br><em>la superficie.</em></h1>
   <p class="sub">Dispensador automático NOXALIVING P25. Sin contacto, recargable, resistente al agua. Únete a la lista de espera antes del lanzamiento oficial.</p>
-  <div class="hero-product"><img src="product-solo.jpeg" alt="Dispensador NOXALIVING P25"></div>
+  <div class="hero-product"><img src="product-cutout.png" alt="Dispensador NOXALIVING P25"></div>
   <div class="scroll-cue"><span></span>Descubre</div>
 </section>
 
@@ -492,7 +503,7 @@
 </section>
 
 <footer>
-  <div class="logo"><img src="logo.png" alt="NOXALIVING"></div>
+  <div class="logo"><img src="logo-white.png" alt="NOXALIVING"></div>
   <span class="mono">© 2026 Noxaliving — Quality · Innovation · Design</span>
 </footer>
 
