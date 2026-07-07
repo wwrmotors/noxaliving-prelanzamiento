@@ -35,7 +35,7 @@
   }
 
   *{margin:0;padding:0;box-sizing:border-box;}
-  html{scroll-behavior:smooth;}
+  html{scroll-behavior:smooth; overflow-x:hidden;}
   body{
     background:var(--bg);
     color:var(--text);
@@ -43,6 +43,7 @@
     font-weight:300;
     -webkit-font-smoothing:antialiased;
     overflow-x:hidden;
+    width:100%;
   }
   @media (prefers-reduced-motion: reduce){
     *{animation-duration:0.01ms !important; transition-duration:0.01ms !important;}
@@ -330,6 +331,7 @@
     max-width:1300px;
     margin:0 auto;
     align-items:center;
+    overflow:hidden;
   }
   .waitlist-copy .mono.tag{color:var(--teal); font-size:11px; margin-bottom:18px; display:block;}
   .waitlist-copy h2{
@@ -351,6 +353,8 @@
     display:flex;
     gap:40px;
     align-items:center;
+    min-width:0;
+    overflow:hidden;
   }
   /* the capsule = literal soap-level indicator from the product */
   .capsule{
@@ -473,13 +477,15 @@
   /* ---------- RESPONSIVE ---------- */
   @media (max-width:860px){
     .hero-text{padding:0 5%;}
-    .showcase, .waitlist{grid-template-columns:1fr;}
-    .trust-bar{grid-template-columns:repeat(2,1fr);}
-    .capsule-card{flex-direction:column;}
+    .showcase, .waitlist{grid-template-columns:1fr; padding-left:5%; padding-right:5%;}
+    .trust-bar{grid-template-columns:repeat(2,1fr); padding-left:5%; padding-right:5%;}
+    .capsule-card{flex-direction:column; padding:28px 20px;}
     .capsule{width:100%; height:70px; border-radius:14px;}
     .capsule-fill{width:31%; height:100% !important; border-radius:14px 0 0 14px; bottom:auto; left:0;}
     .capsule-pct{top:auto; left:14px; right:auto; top:50%; transform:translateY(-50%);}
     .countdown{gap:14px;}
+    .form-col{width:100%; min-width:0;}
+    input, button{width:100%;}
   }
 </style>
 </head>
